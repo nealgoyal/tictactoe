@@ -42,6 +42,12 @@ def win_check(board,mark):
 def space_check(board, position):
     return board[position] == ' '
 
+# Checks if board is full
+def full_board_check(board):
+    for i in range(1,10):
+        if space_check(board, i):
+            return False
+    return True
 
 board = range(1,10)
 print (display_board(board))
