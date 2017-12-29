@@ -27,7 +27,7 @@ def place_marker(board, marker, position):
 # Checking if there is a winner!
 def win_check(board,mark):
             # horizontal
-    return  ((board[7] == mark and board[8] == mark and board[9] == mark) 
+    return  ((board[7] == mark and board[8] == mark and board[9] == mark)
             or (board[4] == mark and board[5] == mark and board[6] == mark)
             or (board[1] == mark and board[2] == mark and board[3] == mark)
             # vertical
@@ -37,6 +37,11 @@ def win_check(board,mark):
             # diagonal
             or (board[7] == mark and board[5] == mark and board[3] == mark)
             or (board[9] == mark and board[5] == mark and board[1] == mark))
+
+# Accounts for edge case: space on the board
+def space_check(board, position):
+    return board[position] == ' '
+
 
 board = range(1,10)
 print (display_board(board))
