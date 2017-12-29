@@ -9,7 +9,13 @@ def display_board(board):
         if element < 7:
             print("-----|-----|-----")
 
+# Creating player input
+def player_input():
+    pos = input("Enter position: ")
+    while pos not in board:
+        pos = input("Enter position: ")
 
 
 board = range(1,10)
 print (display_board(board))
+player_input()
