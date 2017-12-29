@@ -15,7 +15,15 @@ def player_input():
     while pos not in board:
         pos = input("Enter position: ")
 
+    return pos
+
+# Implementing 'X' and 'O' on board from user player_input
+def place_marker(board, marker, position):
+    board[position] = marker
+
 
 board = range(1,10)
 print (display_board(board))
-player_input()
+currPos = player_input()
+place_marker(board, 'X', currPos)
+print (display_board(board))
